@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --background-color: linear-gradient(180deg, #112D4E, #3F72AF);
+
+    --darker-color: #112D4E;
+    --dark-color: #3F72AF;
+    --light-color: #DBE2EF;
+    --lighter-color: #F9F7F7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    background: var(--background-color);
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    height: 350px;
+    width: 350px;
+    position: relative;
+    background: var(--lighter-color);
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .5);
+    transition: 0.5s;
+}
+
+.card:hover {
+    height: 400px;
+}
+
+.card:hover .img-box {
+    top: -100px;
+    transform: scale(0.75);
+}
+
+.img-box {
+    position: absolute;
+    transition: 0.5s;
+    width: 250px;
+    height: auto;
+    top: 0;
+}
+
+.card .img-box img {
+    height: 100%;
+    width: 100%;
+    /* object-fit: cover; */
+}
+
+.card .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: absolute;
+    top: 250px;
+    user-select: none;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0 2rem;
+    text-align: center;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.card:hover .content {
+    top: 100px;
+    height: 250px;
+}
+
+.card .read-more {
+    background: var(--background-color);
+    padding: 12px;
+    color: var(--lighter-color);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.1s;
+}
+
+.card .read-more:hover {
+    transform: scale(1.05);
+}
+
+.card .read-more:active {
+    transform: scale(1);
+
+}
